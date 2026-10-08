@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ozoon Store — Luxury Red Edition</title>
+<style>
+:root{--blue:#d10d22;--navy:#210609;--ink:#152238;--muted:#718096;--line:#e6edf5;--bg:#fff8f8;--white:#fff;--green:#0d9f6e;--shadow:0 8px 28px rgba(16,42,80,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}
+.topline{background:var(--navy);color:#ffeded;padding:9px 5%;font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.head{max-width:1240px;margin:auto;padding:16px 22px;display:flex;align-items:center;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:850;letter-spacing:-.8px;white-space:nowrap}.logo-icon{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#ed2537,#850514);display:grid;place-items:center;color:white;font-size:23px;box-shadow:0 5px 14px #d10d2244}.logo span span{color:var(--blue)}
+.search{display:flex;flex:1;max-width:620px;background:#fff5f5;border:1px solid #f2dede;border-radius:13px;overflow:hidden}.search input{border:0;outline:0;background:transparent;padding:13px 15px;min-width:0;flex:1}.search button{border:0;background:var(--blue);color:white;padding:0 20px;font-weight:700}
+.head-actions{display:flex;gap:10px;margin-left:auto}.icon-btn{border:1px solid var(--line);background:white;border-radius:12px;padding:10px 12px;color:var(--ink);position:relative}.badge{position:absolute;top:-7px;right:-6px;background:#e21c38;color:white;border-radius:99px;font-size:10px;min-width:18px;height:18px;display:grid;place-items:center;padding:0 4px}
+.wrap{max-width:1240px;margin:auto;padding:24px 22px 70px}.hero{background:linear-gradient(115deg,#24113f 0%,#850514 58%,#ed2537 100%);color:white;border-radius:24px;padding:38px 42px;display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;overflow:hidden;min-height:275px;box-shadow:var(--shadow)}.eyebrow{color:#e7c987;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:800}.hero h1{font-size:clamp(30px,4vw,49px);line-height:1.05;letter-spacing:-1.8px;margin:13px 0}.hero p{color:#ffe8e8;max-width:430px;line-height:1.6;margin-bottom:22px}.primary{border:0;background:linear-gradient(135deg,#7138b8,#850514);color:#fff;border-radius:11px;padding:12px 17px;font-weight:750;box-shadow:0 5px 12px #d10d222a}.hero .primary{background:#fff;color:#5e2797}.hero-art{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:370px;justify-self:center;transform:rotate(-4deg)}.art-card{height:118px;border-radius:20px;background:#ffffff1d;border:1px solid #ffffff38;display:grid;place-items:center;font-size:48px;backdrop-filter:blur(8px)}.art-card:nth-child(2),.art-card:nth-child(3){transform:translateY(12px)}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 30px}.benefit{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;display:flex;align-items:center;gap:12px}.benefit .emoji{font-size:23px}.benefit b{display:block;font-size:13px}.benefit small{color:var(--muted);font-size:11px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:28px 0 16px}.section-head h2{font-size:24px;letter-spacing:-.7px;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.cat{border:1px solid var(--line);border-radius:16px;background:#fff;padding:18px 10px;text-align:center;transition:.2s}.cat:hover,.cat.active{border-color:#e58b93;box-shadow:0 5px 18px #d10d221a;transform:translateY(-2px)}.cat .emoji{font-size:31px;display:block;margin-bottom:8px}.cat b{font-size:12px}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:15px}.filter{background:white;border:1px solid var(--line);border-radius:99px;padding:8px 13px;font-size:12px;color:#526177}.filter.active{background:#ffeded;color:#b30a1d;border-color:#f0b9bd;font-weight:750}.sort{margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;color:#526177;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.product{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.2s;position:relative}.product:hover{box-shadow:var(--shadow);transform:translateY(-3px)}.product-visual{height:180px;display:grid;place-items:center;font-size:76px;background:linear-gradient(145deg,#fff0f0,#f8e5e5);position:relative}.tag{position:absolute;top:12px;left:12px;background:#fff0d9;color:#a66a00;border-radius:7px;padding:5px 7px;font-size:10px;font-weight:800}.heart{position:absolute;right:10px;top:10px;border:0;background:#fff;border-radius:50%;width:32px;height:32px;font-size:17px;color:#718096}.heart.saved{color:#f43f63}.product-info{padding:14px}.product-name{font-size:14px;font-weight:700;line-height:1.35;min-height:38px}.rating{color:#b7862e;font-size:12px;margin:7px 0}.rating span{color:#8591a3}.price-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:9px 0 12px}.price{font-size:19px;font-weight:850;color:#850514;letter-spacing:-.4px}.old{font-size:12px;color:#9aa4b2;text-decoration:line-through}.add{width:100%;border:0;background:#ffeded;color:#b30a1d;border-radius:10px;padding:10px;font-size:12px;font-weight:800}.add:hover{background:var(--blue);color:white}
+.empty{grid-column:1/-1;background:#fff;border:1px dashed #cad7e7;border-radius:16px;padding:36px;text-align:center;color:var(--muted)}
+footer{background:#24113f;color:#d6e5fa;padding:30px 22px}.foot{max-width:1240px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}.foot b{font-size:15px;color:white}
+.overlay{position:fixed;inset:0;background:#210609b8;z-index:30;display:none;justify-content:flex-end}.overlay.open{display:flex}.drawer{height:100%;width:min(440px,100%);background:#fff;padding:23px;overflow:auto;box-shadow:-10px 0 40px #21060920}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}.drawer-head h2{margin:0}.close{border:0;background:#f1f5fa;border-radius:10px;padding:8px 11px}.cart-item{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}.cart-emoji{width:56px;height:56px;background:#f8e8e8;border-radius:12px;display:grid;place-items:center;font-size:29px}.cart-item b{font-size:13px}.cart-item small{display:block;color:var(--muted);margin-top:5px}.qty{display:flex;align-items:center;gap:8px;margin-top:7px}.qty button{border:1px solid var(--line);background:white;border-radius:7px;width:25px;height:25px}.cart-total{display:flex;justify-content:space-between;font-weight:850;font-size:18px;padding:20px 0}.checkout{width:100%;padding:14px}.note{font-size:11px;color:var(--muted);line-height:1.5;text-align:center;margin-top:10px}
+.modal{position:fixed;inset:0;z-index:40;background:#210609b8;display:none;place-items:center;padding:18px}.modal.open{display:grid}.modal-box{background:white;border-radius:20px;padding:25px;width:min(440px,100%);box-shadow:var(--shadow)}.modal-box h2{margin-top:0}.field{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;margin:6px 0 12px;outline-color:var(--blue)}.success{background:#fff0f0;color:#b30a1d;padding:13px;border-radius:10px;font-size:13px;line-height:1.5}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#09264d;color:white;border-radius:12px;padding:12px 18px;font-size:13px;z-index:60;transition:.25s;box-shadow:var(--shadow)}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.head{gap:12px;flex-wrap:wrap}.logo{font-size:20px}.search{order:3;max-width:none;flex-basis:100%}.hero{padding:30px;grid-template-columns:1fr .7fr}.benefits{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.topline{justify-content:center}.head{padding:12px 15px}.head-actions .label{display:none}.wrap{padding:16px 14px 45px}.hero{grid-template-columns:1fr;padding:27px 23px;min-height:auto}.hero-art{display:none}.hero h1{font-size:36px}.benefits{gap:8px}.benefit{padding:11px}.benefit small{font-size:10px}.categories{grid-template-columns:repeat(3,1fr);gap:8px}.cat{padding:14px 5px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-visual{height:135px;font-size:59px}.product-info{padding:11px}.product-name{font-size:12px}.price{font-size:17px}.section-head h2{font-size:21px}.sort{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="topline"><span>✦ Welcome to Ozoon Store — luxury finds, smarter shopping</span><span>🚚 Delivery options at checkout &nbsp; • &nbsp; Secure shopping demo</span></div>
+<header><div class="head">
+  <div class="logo"><div class="logo-icon">🛍</div><span>Ozoon <span>Store</span></span></div>
+  <form class="search" id="searchForm"><input id="searchInput" placeholder="Search for products, brands and more..." aria-label="Search products"><button type="submit">Search</button></form>
+  <div class="head-actions">
+    <button class="icon-btn" id="wishlistBtn" title="Wishlist">♡ <span class="label">Saved</span><span class="badge" id="wishCount">0</span></button>
+    <button class="icon-btn" id="cartBtn" title="Shopping cart">🛒 <span class="label">Cart</span><span class="badge" id="cartCount">0</span></button>
+  </div>
+</div></header>
+<main class="wrap">
+  <section class="hero">
+    <div><div class="eyebrow">Your everyday marketplace</div><h1>Great finds.<br>Better prices.</h1><p>Discover the little things that make life better — from the latest tech to everyday essentials, all in one place.</p><button class="primary" id="shopNow">Explore products&nbsp; →</button></div>
+    <div class="hero-art" aria-hidden="true"><div class="art-card">🎧</div><div class="art-card">⌚</div><div class="art-card">👟</div><div class="art-card">📱</div></div>
+  </section>
+  <section class="benefits">
+    <div class="benefit"><span class="emoji">🚚</span><div><b>Easy delivery</b><small>Delivery details at checkout</small></div></div>
+    <div class="benefit"><span class="emoji">🔒</span><div><b>Safe shopping</b><small>Simple, secure experience</small></div></div>
+    <div class="benefit"><span class="emoji">↩️</span><div><b>Easy returns</b><small>Shop with confidence</small></div></div>
+    <div class="benefit"><span class="emoji">💬</span><div><b>Here to help</b><small>Friendly customer support</small></div></div>
+  </section>
+  <section id="categoriesSection">
+    <div class="section-head"><div><h2>Shop by category</h2><p>Find your next favourite thing</p></div></div>
+    <div class="categories" id="categories"></div>
+  </section>
+  <section id="productsSection">
+    <div class="section-head"><div><h2 id="productHeading">Popular picks</h2><p id="productSub">Customer favourites, picked for you</p></div></div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-filter="All">All products</button><button class="filter" data-filter="Popular">Popular</button><button class="filter" data-filter="Deals">Deals</button>
+      <select class="sort" id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="rating">Top rated</option></select>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </section>
+</main>
+<footer><div class="foot"><div><b>🛍 Ozoon Store</b><p>Luxury finds. Better living.</p></div><div>Demo storefront · Sample products and prices<br>Payments and order fulfilment are not connected yet.</div><div>© 2026 Ozoon Store · Built for your next big idea</div></div></footer>
+<div class="overlay" id="cartOverlay"><aside class="drawer"><div class="drawer-head"><h2>Your cart 🛒</h2><button class="close" id="closeCart">✕</button></div><div id="cartItems"></div><div id="cartFooter"></div></aside></div>
+<div class="modal" id="checkoutModal"><div class="modal-box"><div class="drawer-head"><h2>Checkout</h2><button class="close" id="closeCheckout">✕</button></div><div id="checkoutContent"></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const products=[
+{id:1,name:"Wireless Noise-Cancelling Headphones",cat:"Electronics",price:8990,old:11990,emoji:"🎧",rating:4.8,reviews:124,tag:"BESTSELLER",popular:true},
+{id:2,name:"Smart Watch Series 8",cat:"Electronics",price:6490,old:7990,emoji:"⌚",rating:4.7,reviews:98,tag:"-19%",popular:true},
+{id:3,name:"Everyday Running Sneakers",cat:"Fashion",price:5290,old:6990,emoji:"👟",rating:4.6,reviews:87,tag:"TRENDING",popular:true},
+{id:4,name:"Wireless Earbuds Pro",cat:"Electronics",price:3990,old:5490,emoji:"🎵",rating:4.8,reviews:203,tag:"-27%",popular:true},
+{id:5,name:"Everyday Travel Backpack",cat:"Fashion",price:2790,old:3490,emoji:"🎒",rating:4.5,reviews:62,tag:"VALUE",popular:false},
+{id:6,name:"Minimal Ceramic Table Lamp",cat:"Home & Living",price:3190,old:3990,emoji:"💡",rating:4.6,reviews:45,tag:"-20%",popular:false},
+{id:7,name:"Hydrating Skincare Set",cat:"Beauty",price:2490,old:2990,emoji:"🧴",rating:4.7,reviews:113,tag:"POPULAR",popular:true},
+{id:8,name:"Stainless Steel Water Bottle",cat:"Sports",price:1290,old:1690,emoji:"🥤",rating:4.5,reviews:76,tag:"-24%",popular:false},
+{id:9,name:"Compact Digital Camera",cat:"Electronics",price:18990,old:21990,emoji:"📷",rating:4.7,reviews:58,tag:"NEW",popular:false},
+{id:10,name:"Soft Knit Everyday Hoodie",cat:"Fashion",price:3490,old:4490,emoji:"🧥",rating:4.4,reviews:92,tag:"-22%",popular:false},
+{id:11,name:"Insulated Coffee Mug",cat:"Home & Living",price:990,old:1290,emoji:"☕",rating:4.6,reviews:140,tag:"DEAL",popular:true},
+{id:12,name:"Building Blocks Creative Set",cat:"Toys",price:2190,old:2790,emoji:"🧩",rating:4.8,reviews:71,tag:"GIFT PICK",popular:false}
+];
+const cats=[["All","✨"],["Electronics","💻"],["Fashion","👕"],["Home & Living","🏡"],["Beauty","🧴"],["Sports","⚽"],["Toys","🧸"]];
+let activeCat="All",activeFilter="All",query="",cart={},wishlist=new Set();
+const $=id=>document.getElementById(id);
+const money=n=>"Rs. "+n.toLocaleString("en-PK");
+function renderCategories(){$("categories").innerHTML=cats.map(([name,emoji])=>`<button class="cat ${activeCat===name?'active':''}" data-cat="${name}"><span class="emoji">${emoji}</span><b>${name==="All"?"All categories":name}</b></button>`).join("");}
+function filteredProducts(){let arr=products.filter(p=>(activeCat==="All"||p.cat===activeCat)&&(activeFilter==="All"||(activeFilter==="Popular"&&p.popular)||(activeFilter==="Deals"&&p.old>p.price)&&true)&&(p.name+" "+p.cat).toLowerCase().includes(query.toLowerCase()));let sort=$("sortSelect").value;if(sort==="low")arr.sort((a,b)=>a.price-b.price);if(sort==="high")arr.sort((a,b)=>b.price-a.price);if(sort==="rating")arr.sort((a,b)=>b.rating-a.rating);return arr;}
+function renderProducts(){let arr=filteredProducts();$("productHeading").textContent=query?`Search results (${arr.length})`:activeCat==="All"?"Popular picks":activeCat;$("productSub").textContent=query?`Showing matches for “${query}”`:"Customer favourites, picked for you";$("productGrid").innerHTML=arr.length?arr.map(p=>`<article class="product"><div class="product-visual"><span>${p.emoji}</span><span class="tag">${p.tag}</span><button class="heart ${wishlist.has(p.id)?'saved':''}" data-wish="${p.id}" aria-label="Save ${p.name}">${wishlist.has(p.id)?"♥":"♡"}</button></div><div class="product-info"><div class="product-name">${p.name}</div><div class="rating">★ ${p.rating} <span>(${p.reviews} reviews)</span></div><div class="price-row"><span class="price">${money(p.price)}</span><span class="old">${money(p.old)}</span></div><button class="add" data-add="${p.id}">＋ Add to cart</button></div></article>`).join(""):`<div class="empty">🔎<h3>No products found</h3>Try a different search or category.</div>`;}
+function updateCounts(){$("cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0);$("wishCount").textContent=wishlist.size;}
+function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2200);}
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCounts();renderCart();toast("Added to your cart ✓");}
+function renderCart(){let entries=Object.entries(cart).filter(([id,q])=>q>0);if(!entries.length){$("cartItems").innerHTML='<div class="empty" style="margin-top:20px">🛒<h3>Your cart is empty</h3>Add something you love to get started.</div>';$("cartFooter").innerHTML="";return;}let total=0;$("cartItems").innerHTML=entries.map(([id,q])=>{let p=products.find(x=>x.id===+id);total+=p.price*q;return `<div class="cart-item"><div class="cart-emoji">${p.emoji}</div><div><b>${p.name}</b><small>${money(p.price)} each</small><div class="qty"><button data-qty="${id}" data-delta="-1">−</button><span>${q}</span><button data-qty="${id}" data-delta="1">+</button></div></div><b>${money(p.price*q)}</b></div>`}).join("");$("cartFooter").innerHTML=`<div class="cart-total"><span>Total</span><span>${money(total)}</span></div><button class="primary checkout" id="checkoutBtn">Continue to checkout →</button><p class="note">Demo checkout only. No payment will be collected.</p>`;}
+function openCart(){$("cartOverlay").classList.add("open");renderCart();}
+function openCheckout(){if(!Object.keys(cart).length){toast("Your cart is empty");return;} $("checkoutContent").innerHTML=`<p style="color:#718096;font-size:13px">Enter your details to create a demo order.</p><form id="orderForm"><label>Full name</label><input class="field" name="name" required placeholder="Your name"><label>Phone number</label><input class="field" name="phone" required type="tel" placeholder="+92 3xx xxxxxxx"><label>Delivery address</label><textarea class="field" name="address" required rows="3" placeholder="Street, city, postal code"></textarea><button class="primary checkout" type="submit">Place demo order</button></form><p class="note">This prototype does not process real payments or send orders to a store.</p>`;$("checkoutModal").classList.add("open");}
+$("categories").addEventListener("click",e=>{let b=e.target.closest("[data-cat]");if(!b)return;activeCat=b.dataset.cat;renderCategories();renderProducts();$("productsSection").scrollIntoView({behavior:"smooth",block:"start"});});
+$("productGrid").addEventListener("click",e=>{let add=e.target.closest("[data-add]");let wish=e.target.closest("[data-wish]");if(add)addToCart(+add.dataset.add);if(wish){let id=+wish.dataset.wish;wishlist.has(id)?wishlist.delete(id):wishlist.add(id);updateCounts();renderProducts();}});
+$("filters").addEventListener("click",e=>{let b=e.target.closest("[data-filter]");if(!b)return;activeFilter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderProducts();});
+$("sortSelect").addEventListener("change",renderProducts);
+$("searchForm").addEventListener("submit",e=>{e.preventDefault();query=$("searchInput").value.trim();activeCat="All";renderCategories();renderProducts();$("productsSection").scrollIntoView({behavior:"smooth"});});
+$("shopNow").addEventListener("click",()=>$("productsSection").scrollIntoView({behavior:"smooth"}));
+$("cartBtn").addEventListener("click",openCart);$("closeCart").addEventListener("click",()=>$("cartOverlay").classList.remove("open"));$("cartOverlay").addEventListener("click",e=>{if(e.target===$("cartOverlay"))$("cartOverlay").classList.remove("open");});
+$("cartItems").addEventListener("click",e=>{let b=e.target.closest("[data-qty]");if(!b)return;let id=b.dataset.qty;cart[id]=(cart[id]||0)+(+b.dataset.delta);if(cart[id]<=0)delete cart[id];updateCounts();renderCart();});
+$("cartFooter").addEventListener("click",e=>{if(e.target.closest("#checkoutBtn"))openCheckout();});
+$("closeCheckout").addEventListener("click",()=>$("checkoutModal").classList.remove("open"));$("checkoutModal").addEventListener("click",e=>{if(e.target===$("checkoutModal"))$("checkoutModal").classList.remove("open");});
+$("checkoutContent").addEventListener("submit",e=>{if(e.target.id!=="orderForm")return;e.preventDefault();let fd=new FormData(e.target);let orderId="OZ"+Math.floor(100000+Math.random()*900000);$("checkoutContent").innerHTML=`<div class="success"><h3>✓ Demo order created!</h3><p>Order <b>${orderId}</b> has been simulated for ${fd.get("name")}. No payment was taken and nothing has been sent to a real store.</p><button class="primary" id="doneBtn">Continue shopping</button></div>`;cart={};updateCounts();renderCart();});
+$("checkoutContent").addEventListener("click",e=>{if(e.target.id==="doneBtn"){$("checkoutModal").classList.remove("open");$("cartOverlay").classList.remove("open");toast("Thanks for trying Ozoon Store!");}});
+$("wishlistBtn").addEventListener("click",()=>{activeCat="All";activeFilter="All";query="";$("searchInput").value="";renderCategories();renderProducts();if(wishlist.size){let saved=products.filter(p=>wishlist.has(p.id));$("productHeading").textContent="Your wishlist";$("productSub").textContent=`${saved.length} saved product(s)`;$("productGrid").innerHTML=saved.map(p=>`<article class="product"><div class="product-visual"><span>${p.emoji}</span><button class="heart saved" data-wish="${p.id}">♥</button></div><div class="product-info"><div class="product-name">${p.name}</div><div class="price-row"><span class="price">${money(p.price)}</span></div><button class="add" data-add="${p.id}">＋ Add to cart</button></div></article>`).join("");}else toast("Your wishlist is empty — tap ♡ on a product");$("productsSection").scrollIntoView({behavior:"smooth"});});
+renderCategories();renderProducts();renderCart();updateCounts();
+</script>
+</body>
+</html>
